@@ -35,6 +35,11 @@ body {
   padding: 2rem 1rem;
 }
 
+// .head-toggle
+.head-toggle {
+  display: none;
+}
+
 // .head-logo
 .head-logo {
   min-width: 146px;
@@ -79,6 +84,11 @@ body {
 /* ------------------- MAIN ------------------- */
 main {
   width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 /* ============================================ */
 /*                     .SEC1                    */
@@ -86,7 +96,6 @@ main {
 .sec1 {
   width: 100%;
   max-width: 1280px;
-
   padding: 2rem 0.5rem;
 
   display: flex;
@@ -94,9 +103,12 @@ main {
   align-items: center;
   gap: 1rem;
 
+  overflow-x: hidden;
+
   //   .sec1-text
   .sec1-text {
     width: 50%;
+
     h1 {
       color: #222d54;
       font-size: clamp(2.5rem, 3vw, 3rem);
@@ -129,6 +141,10 @@ main {
   //   .sec1-img
   .sec1-img {
     width: 50%;
+    margin-right: -1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 
@@ -154,6 +170,7 @@ main {
     }
 
     p {
+      margin: 1rem 0;
       opacity: 0.7;
     }
   }
@@ -259,6 +276,11 @@ main {
       opacity: 0.8;
     }
   }
+
+// .sec3-dot
+  .sec3-dot{
+    display: none;
+  }
 }
 
 /* ============================================ */
@@ -266,19 +288,18 @@ main {
 /* ============================================ */
 .sec4 {
   width: 100%;
-  background: #f3613c;
+  // background: #f3613c;
   padding: 3rem 4rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-image: url(../images/bg-tablet-pattern.svg),
-    url(../images/bg-tablet-pattern.svg);
+  background-image: url(../images/bg-simplify-section-desktop.svg);
   background-repeat: no-repeat;
-  background-size: 50%, 40%;
-  background-position: left top 8%, top 120% right -40%;
-  //   background-color: #f98f75;
+  background-size: 110%;
+  background-position: left -60% top 100%;
+  background-color: #f3613c;
 
   //   .sec4-title
   .sec4-title {
@@ -333,6 +354,13 @@ main {
     flex-direction: column;
     align-self: stretch;
 
+    // 1
+    .icon-logo {
+      min-width: 145px;
+      min-height: 24px;
+    }
+
+    // 2
     .icon-social {
       display: flex;
       justify-content: center;
@@ -385,6 +413,7 @@ main {
   //   .foot-email
   .foot-email {
     align-self: stretch;
+    margin-left: 1rem;
 
     display: flex;
     align-items: flex-end;
@@ -396,17 +425,24 @@ main {
       width: 100%;
       position: relative;
 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
       //   1
       input {
+        width: 80%;
         padding: 0.5rem 1rem;
         border-radius: 200rem;
       }
 
       //   2
       button {
+        // min-width: 52px;
+        // min-height: 40px;
         padding: 0.5rem 1rem;
         border-radius: 200rem;
-        margin-left: 0.5remgit ;
+        margin-left: 0.4rem;
 
         &:hover {
           background: #f98f75;

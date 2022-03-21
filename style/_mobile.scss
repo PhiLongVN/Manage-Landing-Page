@@ -1,0 +1,309 @@
+@media screen and (max-width: 767.98px) {
+  .container {
+    background-size: 100%, 60%;
+    background-position: right -50% top -5%, left -80% center;
+  }
+
+  /* ============================================ */
+  /*                     .HEAD                    */
+  /* ============================================ */
+  .head-toggle {
+    display: block;
+
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.147);
+    }
+
+    img:nth-of-type(1) {
+      display: none;
+    }
+  }
+
+  .head-button {
+    display: none;
+  }
+
+  .head-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+
+    width: calc(100% - 1rem);
+    padding: 2rem 1rem;
+    background: white;
+    border-radius: 10px;
+    z-index: 5;
+
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transition: 0.3s all ease;
+  }
+
+  /* ------------------ ACTIVE ------------------ */
+  .head.active > .head-menu {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .head.active > .head-toggle {
+    img:nth-of-type(1) {
+      display: block;
+    }
+    img:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  .head.active::before {
+    content: '';
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(0, 0, 0, 0.42)
+    );
+  }
+
+  /* ============================================ */
+  /*                     .SEC1                    */
+  /* ============================================ */
+
+  .sec1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+
+    text-align: center;
+
+    // .sec1-text
+    .sec1-text {
+      width: 100%;
+
+      h1 {
+        max-width: unset;
+      }
+
+      p {
+        max-width: unset;
+      }
+    }
+
+    // .sec1-img
+    .sec1-img {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  /* ============================================ */
+  /*                     .SEC2                    */
+  /* ============================================ */
+  .sec2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    // .sec2-text
+    .sec2-text {
+      text-align: center;
+      padding: 1rem 2rem;
+    }
+
+    // .sec2-table
+    .sec2-table {
+      .table-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        position: relative;
+
+        .block-numb {
+          position: absolute;
+          z-index: 2;
+          left: 0;
+          top: 0;
+        }
+
+        .block-text {
+          h3 {
+            background: #fff0eb;
+            margin-left: 5rem;
+            padding: 0.35rem 0;
+            padding-left: 2rem;
+            transform: translateX(-2rem);
+          }
+
+          p {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* ============================================ */
+  /*                     .SEC3                    */
+  /* ============================================ */
+  .sec3 {
+    gap: 3rem;
+    padding: 2rem 0;
+
+    //   .sec3-table
+    .sec3-table {
+      width: 100%;
+      display: flex;
+
+      transform: translateX(-300vw);
+      // justify-content: center;
+      // align-items: center;
+      gap: 0rem;
+      //   overflow: hidden;
+
+      .table-block {
+        min-width: 99vw;
+        display: inline-flex;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        background: red;
+
+        p {
+          max-width: 40ch;
+          padding: 0 1rem;
+        }
+      }
+    }
+
+    .sec3-dot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+
+        border-radius: 100rem;
+        background: white;
+        border: 1px solid red;
+        cursor: pointer;
+
+        &:hover {
+          background: red;
+        }
+      }
+    }
+
+    .sec3-btn {
+      margin: 0rem;
+    }
+  }
+
+  /* ============================================ */
+  /*                     .SEC4                    */
+  /* ============================================ */
+  .sec4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    text-align: center;
+    background-image: url(../images/bg-simplify-section-mobile.svg);
+    background-position: left 0% top 0%;
+    background-size: contain;
+  }
+
+  /* ============================================ */
+  /*                     .FOOT                    */
+  /* ============================================ */
+  .foot {
+    padding: 2rem;
+    padding-bottom: 7rem;
+  }
+
+  .foot-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+
+    // .foot-icon
+    .foot-icon {
+      width: 100%;
+      margin-top: 3rem;
+
+      gap: 3rem;
+      order: 3;
+      flex-direction: column-reverse;
+
+      .icon-social {
+        gap: 2.5rem;
+
+        img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+
+    // .foot-email
+    .foot-email {
+      order: 1;
+
+      //   1
+      .email {
+        input {
+          width: 90%;
+        }
+
+        button {
+          padding: 0.5rem 1.5rem;
+        }
+      }
+
+      //   2
+      .right {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        text-align: center;
+      }
+    }
+
+    // .foot-about
+    .foot-about {
+      width: 100%;
+      order: 2;
+      
+      margin: auto;
+      margin-top: 2rem;
+
+      justify-content: space-around;
+    }
+  }
+}
