@@ -9,6 +9,7 @@
   /* ============================================ */
   .head-toggle {
     display: block;
+    z-index: 5;
 
     padding: 0.5rem;
     border-radius: 10px;
@@ -36,16 +37,20 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 20%;
+    top: 10%;
 
-    width: calc(100% - 1rem);
+    width: calc(100% - 2rem);
     padding: 2rem 1rem;
     background: white;
     border-radius: 10px;
     z-index: 5;
 
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-    transition: 0.3s all ease;
+    transition: 0.8s all ease;
+
+    a:hover {
+      color: red;
+    }
   }
 
   /* ------------------ ACTIVE ------------------ */
@@ -70,7 +75,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 4;
     background-image: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
@@ -149,6 +154,7 @@
             padding: 0.35rem 0;
             padding-left: 2rem;
             transform: translateX(-2rem);
+            width: calc(100% - 2.5rem);
           }
 
           p {
@@ -165,25 +171,23 @@
   .sec3 {
     gap: 3rem;
     padding: 2rem 0;
+    overflow-x: hidden;
 
     //   .sec3-table
     .sec3-table {
-      width: 100%;
       display: flex;
-
-      transform: translateX(-300vw);
-      // justify-content: center;
-      // align-items: center;
       gap: 0rem;
-      //   overflow: hidden;
+
+      width: 100%;
+      transform: translateX(-300vw);
+      // opacity: 0;
+      transition: 1s all ease;
 
       .table-block {
-        min-width: 99vw;
+        min-width: 100vw;
         display: inline-flex;
         justify-content: flex-start;
         flex-direction: column;
-
-        background: red;
 
         p {
           max-width: 40ch;
@@ -198,17 +202,17 @@
       align-items: center;
       gap: 0.2rem;
 
+      cursor: pointer;
       .dot {
         width: 10px;
         height: 10px;
 
         border-radius: 100rem;
-        background: white;
+        // background: white;
         border: 1px solid red;
-        cursor: pointer;
 
         &:hover {
-          background: red;
+          transform: scale(1.5);
         }
       }
     }
@@ -260,23 +264,25 @@
       flex-direction: column-reverse;
 
       .icon-social {
-        gap: 2.5rem;
+        gap: 2rem;
 
         img {
-          width: 35px;
-          height: 35px;
+          min-width: 35px;
+          min-height: 35px;
         }
       }
     }
 
     // .foot-email
     .foot-email {
+      margin-left: 0rem;
+      width: 100%;
       order: 1;
 
       //   1
       .email {
         input {
-          width: 90%;
+          width: 100%;
         }
 
         button {
@@ -293,17 +299,39 @@
 
         text-align: center;
       }
+
+      /* ------------------ ACTIVE ------------------ */
+
+      .email.active > span {
+        opacity: 1;
+        visibility: visible;
+      }
     }
 
     // .foot-about
     .foot-about {
       width: 100%;
       order: 2;
-      
+
       margin: auto;
       margin-top: 2rem;
 
       justify-content: space-around;
+    }
+  }
+}
+
+@media screen and (max-width: 374.98px) {
+  .foot-wrapper {
+    .foot-icon {
+      .icon-social {
+        gap: 1rem;
+
+        img {
+          min-width: 30px;
+          min-height: 30px;
+        }
+      }
     }
   }
 }

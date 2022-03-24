@@ -640,6 +640,7 @@ main {
   /* ============================================ */
   .head-toggle {
     display: block;
+    z-index: 5;
     padding: 0.5rem;
     border-radius: 10px;
     cursor: pointer;
@@ -671,16 +672,19 @@ main {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: 20%;
-    width: calc(100% - 1rem);
+    top: 10%;
+    width: calc(100% - 2rem);
     padding: 2rem 1rem;
     background: white;
     border-radius: 10px;
     z-index: 5;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
             clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-    -webkit-transition: 0.3s all ease;
-    transition: 0.3s all ease;
+    -webkit-transition: 0.8s all ease;
+    transition: 0.8s all ease;
+  }
+  .head-menu a:hover {
+    color: red;
   }
   /* ------------------ ACTIVE ------------------ */
   .head.active > .head-menu {
@@ -700,7 +704,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 4;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.42)));
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.42));
   }
@@ -787,6 +791,7 @@ main {
     padding-left: 2rem;
     -webkit-transform: translateX(-2rem);
             transform: translateX(-2rem);
+    width: calc(100% - 2.5rem);
   }
   .sec2 .sec2-table .table-block .block-text p {
     padding: 1rem;
@@ -797,18 +802,21 @@ main {
   .sec3 {
     gap: 3rem;
     padding: 2rem 0;
+    overflow-x: hidden;
   }
   .sec3 .sec3-table {
-    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    gap: 0rem;
+    width: 100%;
     -webkit-transform: translateX(-300vw);
             transform: translateX(-300vw);
-    gap: 0rem;
+    -webkit-transition: 1s all ease;
+    transition: 1s all ease;
   }
   .sec3 .sec3-table .table-block {
-    min-width: 99vw;
+    min-width: 100vw;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -819,7 +827,6 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background: red;
   }
   .sec3 .sec3-table .table-block p {
     max-width: 40ch;
@@ -836,17 +843,17 @@ main {
         -ms-flex-align: center;
             align-items: center;
     gap: 0.2rem;
+    cursor: pointer;
   }
   .sec3 .sec3-dot .dot {
     width: 10px;
     height: 10px;
     border-radius: 100rem;
-    background: white;
     border: 1px solid red;
-    cursor: pointer;
   }
   .sec3 .sec3-dot .dot:hover {
-    background: red;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
   .sec3 .sec3-btn {
     margin: 0rem;
@@ -910,19 +917,22 @@ main {
             flex-direction: column-reverse;
   }
   .foot-wrapper .foot-icon .icon-social {
-    gap: 2.5rem;
+    gap: 2rem;
   }
   .foot-wrapper .foot-icon .icon-social img {
-    width: 35px;
-    height: 35px;
+    min-width: 35px;
+    min-height: 35px;
   }
   .foot-wrapper .foot-email {
+    margin-left: 0rem;
+    width: 100%;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    /* ------------------ ACTIVE ------------------ */
   }
   .foot-wrapper .foot-email .email input {
-    width: 90%;
+    width: 100%;
   }
   .foot-wrapper .foot-email .email button {
     padding: 0.5rem 1.5rem;
@@ -935,6 +945,10 @@ main {
             transform: translateX(-50%);
     text-align: center;
   }
+  .foot-wrapper .foot-email .email.active > span {
+    opacity: 1;
+    visibility: visible;
+  }
   .foot-wrapper .foot-about {
     width: 100%;
     -webkit-box-ordinal-group: 3;
@@ -944,6 +958,16 @@ main {
     margin-top: 2rem;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 374.98px) {
+  .foot-wrapper .foot-icon .icon-social {
+    gap: 1rem;
+  }
+  .foot-wrapper .foot-icon .icon-social img {
+    min-width: 30px;
+    min-height: 30px;
   }
 }
 /*# sourceMappingURL=main.css.map */
