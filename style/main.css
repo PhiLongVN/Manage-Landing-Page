@@ -810,8 +810,6 @@ main {
     display: flex;
     gap: 0rem;
     width: 100%;
-    -webkit-transform: translateX(-300vw);
-            transform: translateX(-300vw);
     -webkit-transition: 1s all ease;
     transition: 1s all ease;
   }

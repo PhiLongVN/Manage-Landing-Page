@@ -68,8 +68,7 @@ function handleDot(e) {
   tableSlide.style.transform = `translateX(-${slide}00vw)`;
   light();
 }
-
-setInterval(plusSLide, 5000);
+light();
 
 function plusSLide() {
   if (slide > 3) {
@@ -88,4 +87,21 @@ function light() {
       dot.style.background = 'unset';
     }
   });
+}
+
+
+/* ============================================ */
+/*             SET CHAY TREN MOBILE             */
+/* ============================================ */
+var x = window.matchMedia('(max-width: 767.98px)');
+
+myFunction(x);
+
+function myFunction(x) {
+  if (x.matches) {
+    // If media query matches
+    setInterval(plusSLide, 5000);
+  } else {
+    return;
+  }
 }
